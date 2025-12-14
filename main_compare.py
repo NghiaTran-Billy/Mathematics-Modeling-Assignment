@@ -7,9 +7,9 @@ import os
 import xml.etree.ElementTree as ET
 import math
 
-from task1 import PetriNet
-from task2 import bfs_reachable
-from task3 import bdd_reachable
+from PetriNetReading import PetriNet
+from ExplicitComputation import bfs_reachable
+from SymbolicComputation import bdd_reachable
 
 def generate_parallel_pnml(target_states, filename):
     a = int(target_states ** (1/3))

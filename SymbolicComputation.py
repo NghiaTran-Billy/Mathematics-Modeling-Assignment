@@ -1,7 +1,6 @@
 import collections
 from typing import Tuple, List, Optional
-# from pyeda.inter import *
-from task1 import PetriNet
+from PetriNetReading import PetriNet
 from collections import deque
 import numpy as np
 from dd.autoref import BDD  

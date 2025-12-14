@@ -1,6 +1,6 @@
 from collections import deque
 import numpy as np
-from task1 import PetriNet
+from PetriNetReading import PetriNet
 from typing import Set, Tuple
 
 def bfs_reachable(pn: PetriNet) -> Set[Tuple[int, ...]]:

@@ -5,11 +5,11 @@ from typing import Callable, Any
 from typing import Set, Tuple
 
 
-from task1 import PetriNet
-from task2 import bfs_reachable, dfs_reachable
-from task3 import bdd_reachable
-from task4 import deadlock_bdd2, deadlock_iterative_ilp_bdd
-from task5 import max_reachable_marking
+from PetriNetReading import PetriNet
+from ExplicitComputation import bfs_reachable, dfs_reachable
+from SymbolicComputation import bdd_reachable
+from DeadlockDetecting import deadlock_bdd2, deadlock_iterative_ilp_bdd
+from Optimization import max_reachable_marking
 import numpy as np
 
 

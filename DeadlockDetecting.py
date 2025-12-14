@@ -1,5 +1,5 @@
-from task1 import PetriNet
-from task3 import bdd_reachable 
+from PetriNetReading import PetriNet
+from SymbolicComputation import bdd_reachable 
 import numpy as np
 import pulp
 
