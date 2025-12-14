@@ -1,0 +1,213 @@
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+    <net id="large-net-benchmark" type="http://www.pnml.org/version-2009/grammar/ptnet">
+        <name><text>Benchmark_Net</text></name>
+        <page id="page-0">
+    
+
+
+            <place id="P1_0">
+                <initialMarking><text>1</text></initialMarking>
+            </place>
+            <place id="P2_0"></place>
+            <place id="P3_0"></place>
+            <place id="P4_0"></place>
+            <place id="P5_0"></place>
+            <place id="P6_0"></place>
+            <place id="P7_0"></place>
+            <place id="P8_0"></place>
+            <place id="P9_0"></place>
+            <place id="P10_0"></place>
+        <transition id="T1_0"></transition>
+<transition id="T2_0"></transition>
+<transition id="T3_0"></transition>
+<transition id="T4_0"></transition>
+<transition id="T5_0"></transition>
+<transition id="T6_0"></transition>
+<transition id="T7_0"></transition>
+<transition id="T8_0"></transition>
+<transition id="T9_0"></transition>
+<transition id="T10_0"></transition>
+
+            <arc source="P1_0" target="T1_0" />
+            <arc source="T1_0" target="P2_0" />
+            <arc source="T1_0" target="P5_0" />
+
+            <arc source="P2_0" target="T2_0" />
+            <arc source="T2_0" target="P3_0" />
+            <arc source="P3_0" target="T3_0" />
+            <arc source="T3_0" target="P4_0" />
+            <arc source="P4_0" target="T8_0" />
+            <arc source="T8_0" target="P9_0" />
+
+            <arc source="P5_0" target="T4_0" />
+            <arc source="T4_0" target="P6_0" />
+            <arc source="P6_0" target="T5_0" />
+            <arc source="T5_0" target="P7_0" />
+
+            <arc source="P9_0" target="T10_0" />
+            <arc source="P7_0" target="T10_0" />
+            <arc source="T10_0" target="P10_0" />
+
+            <arc source="P10_0" target="T7_0" />
+            <arc source="T7_0" target="P1_0" />
+
+            <arc source="P1_0" target="T6_0" />
+            <arc source="T6_0" target="P8_0" />
+        
+
+
+            <place id="P1_1">
+                <initialMarking><text>1</text></initialMarking>
+            </place>
+            <place id="P2_1"></place>
+            <place id="P3_1"></place>
+            <place id="P4_1"></place>
+            <place id="P5_1"></place>
+            <place id="P6_1"></place>
+            <place id="P7_1"></place>
+            <place id="P8_1"></place>
+            <place id="P9_1"></place>
+            <place id="P10_1"></place>
+        <transition id="T1_1"></transition>
+<transition id="T2_1"></transition>
+<transition id="T3_1"></transition>
+<transition id="T4_1"></transition>
+<transition id="T5_1"></transition>
+<transition id="T6_1"></transition>
+<transition id="T7_1"></transition>
+<transition id="T8_1"></transition>
+<transition id="T9_1"></transition>
+<transition id="T10_1"></transition>
+
+            <arc source="P1_1" target="T1_1" />
+            <arc source="T1_1" target="P2_1" />
+            <arc source="T1_1" target="P5_1" />
+
+            <arc source="P2_1" target="T2_1" />
+            <arc source="T2_1" target="P3_1" />
+            <arc source="P3_1" target="T3_1" />
+            <arc source="T3_1" target="P4_1" />
+            <arc source="P4_1" target="T8_1" />
+            <arc source="T8_1" target="P9_1" />
+
+            <arc source="P5_1" target="T4_1" />
+            <arc source="T4_1" target="P6_1" />
+            <arc source="P6_1" target="T5_1" />
+            <arc source="T5_1" target="P7_1" />
+
+            <arc source="P9_1" target="T10_1" />
+            <arc source="P7_1" target="T10_1" />
+            <arc source="T10_1" target="P10_1" />
+
+            <arc source="P10_1" target="T7_1" />
+            <arc source="T7_1" target="P1_1" />
+
+            <arc source="P1_1" target="T6_1" />
+            <arc source="T6_1" target="P8_1" />
+        
+
+
+            <place id="P1_2">
+                <initialMarking><text>1</text></initialMarking>
+            </place>
+            <place id="P2_2"></place>
+            <place id="P3_2"></place>
+            <place id="P4_2"></place>
+            <place id="P5_2"></place>
+            <place id="P6_2"></place>
+            <place id="P7_2"></place>
+            <place id="P8_2"></place>
+            <place id="P9_2"></place>
+            <place id="P10_2"></place>
+        <transition id="T1_2"></transition>
+<transition id="T2_2"></transition>
+<transition id="T3_2"></transition>
+<transition id="T4_2"></transition>
+<transition id="T5_2"></transition>
+<transition id="T6_2"></transition>
+<transition id="T7_2"></transition>
+<transition id="T8_2"></transition>
+<transition id="T9_2"></transition>
+<transition id="T10_2"></transition>
+
+            <arc source="P1_2" target="T1_2" />
+            <arc source="T1_2" target="P2_2" />
+            <arc source="T1_2" target="P5_2" />
+
+            <arc source="P2_2" target="T2_2" />
+            <arc source="T2_2" target="P3_2" />
+            <arc source="P3_2" target="T3_2" />
+            <arc source="T3_2" target="P4_2" />
+            <arc source="P4_2" target="T8_2" />
+            <arc source="T8_2" target="P9_2" />
+
+            <arc source="P5_2" target="T4_2" />
+            <arc source="T4_2" target="P6_2" />
+            <arc source="P6_2" target="T5_2" />
+            <arc source="T5_2" target="P7_2" />
+
+            <arc source="P9_2" target="T10_2" />
+            <arc source="P7_2" target="T10_2" />
+            <arc source="T10_2" target="P10_2" />
+
+            <arc source="P10_2" target="T7_2" />
+            <arc source="T7_2" target="P1_2" />
+
+            <arc source="P1_2" target="T6_2" />
+            <arc source="T6_2" target="P8_2" />
+        
+
+
+            <place id="P1_3">
+                <initialMarking><text>1</text></initialMarking>
+            </place>
+            <place id="P2_3"></place>
+            <place id="P3_3"></place>
+            <place id="P4_3"></place>
+            <place id="P5_3"></place>
+            <place id="P6_3"></place>
+            <place id="P7_3"></place>
+            <place id="P8_3"></place>
+            <place id="P9_3"></place>
+            <place id="P10_3"></place>
+        <transition id="T1_3"></transition>
+<transition id="T2_3"></transition>
+<transition id="T3_3"></transition>
+<transition id="T4_3"></transition>
+<transition id="T5_3"></transition>
+<transition id="T6_3"></transition>
+<transition id="T7_3"></transition>
+<transition id="T8_3"></transition>
+<transition id="T9_3"></transition>
+<transition id="T10_3"></transition>
+
+            <arc source="P1_3" target="T1_3" />
+            <arc source="T1_3" target="P2_3" />
+            <arc source="T1_3" target="P5_3" />
+
+            <arc source="P2_3" target="T2_3" />
+            <arc source="T2_3" target="P3_3" />
+            <arc source="P3_3" target="T3_3" />
+            <arc source="T3_3" target="P4_3" />
+            <arc source="P4_3" target="T8_3" />
+            <arc source="T8_3" target="P9_3" />
+
+            <arc source="P5_3" target="T4_3" />
+            <arc source="T4_3" target="P6_3" />
+            <arc source="P6_3" target="T5_3" />
+            <arc source="T5_3" target="P7_3" />
+
+            <arc source="P9_3" target="T10_3" />
+            <arc source="P7_3" target="T10_3" />
+            <arc source="T10_3" target="P10_3" />
+
+            <arc source="P10_3" target="T7_3" />
+            <arc source="T7_3" target="P1_3" />
+
+            <arc source="P1_3" target="T6_3" />
+            <arc source="T6_3" target="P8_3" />
+        
+        </page>
+    </net>
+</pnml>
+    
