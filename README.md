@@ -4,13 +4,13 @@
 **Faculty:** Computer Science and Engineering  
 
 ## 1. Group Information
-**Group ID:** [Insert Group ID]  
-**Members:**
-1.Hoàng Minh Hải, 2410898
-2. Trần Trung Nghĩa, 2412278
-3. Phạm Minh Trung, 2413712
-4. Phạm Minh Hiếu, 2411008
-5. Lê Bảo Nghiêm, 2412252
+ 
+**Members | Group ID:**
+1. **Hoàng Minh Hải**, 2410898
+2. **Trần Trung Nghĩa**, 2412278
+3. **Phạm Minh Trung**, 2413712
+4. **Phạm Minh Hiếu**, 2411008
+5. **Lê Bảo Nghiêm**, 2412252
 
 ---
 
@@ -50,11 +50,11 @@ The source code is organized into modular files corresponding to the assignment 
 | File | Role | Description |
 | :--- | :--- | :--- |
 | `benchmark.py` | **Main Entry Point** | Runs all tasks sequentially (BFS, DFS, BDD, Deadlock, Opt) and reports time/memory usage. |
-| `task1.py` | **Task 1** | Parses `.pnml` files and builds the Petri Net structure ($P, T, I, O, M_0$). |
-| `task2.py` | **Task 2** | Implements Explicit Reachability (BFS and DFS algorithms). |
-| `task3.py` | **Task 3** | Implements Symbolic Reachability using `dd`. Uses **Transition Chaining** for efficiency. |
-| `task4.py` | **Task 4** | Implements Deadlock Detection (Iterative ILP & BDD Filtering). |
-| `task5.py` | **Task 5** | Implements **Branch-and-Bound** optimization over BDD nodes. |
+| `PetriNetReading.py` | **Task 1** | Parses `.pnml` files and builds the Petri Net structure ($P, T, I, O, M_0$). |
+| `ExplicitComputation.py` | **Task 2** | Implements Explicit Reachability (BFS and DFS algorithms). |
+| `SymbolicComputation.py` | **Task 3** | Implements Symbolic Reachability using `dd`. Uses **Transition Chaining** for efficiency. |
+| `DeadlockDetecting.py` | **Task 4** | Implements Deadlock Detection (Iterative ILP & BDD Filtering). |
+| `Optimization.py` | **Task 5** | Implements **Branch-and-Bound** optimization over BDD nodes. |
 ## 5. Usage
 
 The project is designed to be run via the `benchmark.py` script, which takes a PNML file path as an argument. It executes all tasks sequentially and prints the results/metrics to the console.
@@ -78,29 +78,29 @@ The script generates a detailed report in the console:
 
 ## 6. Implementation Details
 
-### Task 1: PNML Parsing (`task1.py`)
+### Task 1: PNML Parsing (`PetriNetReading.py`)
 * Uses `xml.etree.ElementTree` to parse the hierarchical structure of standard PNML files.
 * Constructs the Input ($I$) and Output ($O$) Incidence Matrices as `numpy` arrays for efficient algebraic manipulation.
 * Extracts the initial marking $M_0$ and ensures 1-safe consistency.
 
-### Task 2: Explicit Reachability (`task2.py`)
+### Task 2: Explicit Reachability (`ExplicitComputation.py`)
 * **BFS:** Implemented using `collections.deque` as a FIFO queue to explore the state space layer by layer.
 * **DFS:** Implemented using `collections.deque` as a LIFO stack to explore deep paths first.
 * **State Storage:** Visited markings are stored as Python `tuples` within a `set` data structure, ensuring $O(1)$ average time complexity for lookup and insertion.
 
-### Task 3: Symbolic Reachability (`task3.py`)
+### Task 3: Symbolic Reachability (`SymbolicComputation.py`)
 * **Library:** Utilizes the `dd` library for pure Python Binary Decision Diagram manipulation.
 * **Encoding:** Places are encoded as boolean variables. A set of markings is represented as a boolean function.
 * **Transition Chaining:** Instead of computing a monolithic transition relation, the algorithm applies transitions sequentially and updates the reachable set immediately within the loop ("chaining"). This technique significantly reduces the number of iterations required to reach a fixed point.
 
-### Task 4: Deadlock Detection (`task4.py`)
+### Task 4: Deadlock Detection (`DeadlockDetecting.py`)
 Two distinct strategies are implemented to handle deadlock detection:
 1.  **Iterative ILP (Hybrid):** Solves an Integer Linear Program to find a *potential* dead marking. If the BDD check reveals this marking is unreachable, a "canonical cut" constraint is added to the ILP to exclude it, and the process repeats.
 2.  **BDD Filtering (Optimized):** * First, performs a quick ILP check to see if *any* dead marking exists in the mathematical vector space.
     * If yes, it takes the BDD of all reachable markings and logically filters out any state that enables at least one transition.
     * Any remaining states in the BDD are reachable deadlocks.
 
-### Task 5: Optimization (`task5.py`)
+### Task 5: Optimization (`Optimization.py`)
 * **Objective:** Maximize $c^T M$ subject to $M \in Reachable(M_0)$.
 * **Algorithm:** Implements a **Branch-and-Bound** search directly over the BDD structure (nodes).
 * **Pruning:** At each BDD node, the algorithm calculates the upper bound of the potential value for that subtree. If this upper bound is not greater than the current best value found, the entire branch is pruned to save computation time.
@@ -121,5 +121,5 @@ python main_compare.py
 ## 8. Notes
 * **1-Safe Assumption:** The input PNML models are assumed to be 1-safe Petri Nets as per the assignment specification.
 * **Deadlock Definition:** A deadlock is strictly defined as a reachable marking where **no** transitions are enabled.
-* **Performance:** For networks with large state spaces (state explosion), the function **deadlock_iterative_ilp_bdd(pn, ReachSet_BDD, num_reach, max_iter=1000)** in task4.py may explode running time, especially if tunning higher figure for max_iter this make sure to comment the test for this function out if planning to do use big dataset (containing many places, transitions, reachable states).
+* **Performance:** For networks with large state spaces (state explosion), the function **deadlock_iterative_ilp_bdd(pn, ReachSet_BDD, num_reach, max_iter=1000)** in DeadlockDetecting.py may explode running time, especially if tunning higher figure for max_iter this make sure to comment the test for this function out if planning to do use big dataset (containing many places, transitions, reachable states).
 * **About the pnml files** : we have already provided 2 pnml file for convenience to run (this file also used to be disussed in the report), but the user can paste any 1 safe petrinet pnml file and run that file if desired.
